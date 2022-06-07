@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+import holidayEcuador
 
 # Inicializar la aplicacion
 app = Flask(__name__, template_folder='templates')
 
 datosUsuario = []
+fechasFestivas = holidayEcuador("EC-P")
 
 # Ruta principal 
 @app.route('/' , methods=['GET','POST'])
