@@ -12,8 +12,11 @@
 </head>
 
 <body>
-    <center><h2>Pico y Placa</h2></center>
-    <div id="datos" action="/" method="post">
+    {% block body %}
+    <center>
+        <h2>Pico y Placa</h2>
+    </center>
+    <form id="datos" action="/" method="POST">
         <div class="container">
             <div>
                 <label style="color: black">Placa:</label><br />
@@ -33,9 +36,18 @@
 
             <br /><br />
 
-            <input type="submit" style="color: WHITE" class="btn btn-info btn-md" value="Ingresar" />
+            <button type="sbmit">Ingresar</button>
         </div>
-    </div>
+    </form>
+
+
+    <br><br>
+
+    <br> {% for i in placaUsu %}
+    <li>{{ i }}</li>
+    {% endfor %}
+
+    {% endblock %}
 </body>
 
 </html>
